@@ -1,15 +1,19 @@
 import random
-print("Let's play the rock,paper,scissor game")
-list=['rock','paper','scissor']
+
+
+print("Let's play the rock, paper, scissor game")
+choices = ['rock','paper','scissor']
+
 p_points=0.0
 c_points=0.0
 b=0
 
-def game(p_points,c_points,b,list):
-    while b<=3:
+def game(p_points, c_points, b, choices):
+    
+    for _ in range(3):
         b=b+1
         p=input("Enter the input ")
-        c=random.choice(list)
+        c=random.choice(choices)
         if p == c:
             p_points=p_points+0
             c_points=c_points+0
@@ -38,11 +42,11 @@ def game(p_points,c_points,b,list):
     elif c_points > p_points: 
         print("You loose with",c_points)
     return None
-game(p_points,c_points,b,list)
+game(p_points, c_points, b, choices)
 while True:
     res=input("Do you want to play again?(Y for yes and N for no) ") 
     if res == "Y":
-        game(p_points,c_points,b,list)
+        game(p_points, c_points, b, choices)
     else:
         break   
 
